@@ -14,12 +14,19 @@ const connection = mysql.createConnection({
 
 let query = 'SHOW TABLES'; // 10 can be written in a variable and is passed as an argument
 
-let q = 'INSERT INTO user (id, username, email, password) VALUES (?,?,?,?)';
-let user = ["123","Abhi","abhishubhraj@gmail.com","shubhuu"];
-let q1 = 'SELECT * FROM user';
+let q = 'INSERT INTO user (id, username, email, password) VALUES ?';
+// let user = ["123","Abhi","abhishubhraj@gmail.com","shubhuu"];
+// let q1 = 'SELECT * FROM user';
+
+let users = [
+    ["11067","Shoeb","shoebali@gmail.com","shoeb@786"],
+    ["13549","Adarsh","adarshraj@gmail.com","adarsh@123"]
+];
+
+let q2 = 'UPDATE user SET id = 13238 WHERE id = 123';
 // 6
 try {
-    connection.query(q1, (err, result) => { 
+    connection.query(q2, (err, result) => { 
         if (err) throw err;
         console.log(result);  // 8 here result is an array
         console.log(result.length); // 9
