@@ -24,9 +24,11 @@ let users = [
 ];
 
 let q2 = 'UPDATE user SET id = 13238 WHERE id = 123';
+
+let selQue = 'SELECT * FROM user';
 // 6
 try {
-    connection.query(q2, (err, result) => { 
+    connection.query(selQue, (err, result) => { 
         if (err) throw err;
         console.log(result);  // 8 here result is an array
         console.log(result.length); // 9
